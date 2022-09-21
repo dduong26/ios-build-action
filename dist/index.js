@@ -3331,6 +3331,7 @@ const exec = __nccwpck_require__(514);
 
 async function run() {
   try {
+    process.env.IOS_APP_ID = core.getInput("app-id");
     if (
       core.getInput("browserstack-upload").toLowerCase() === "true" &&
       (!core.getInput("browserstack-username") ||

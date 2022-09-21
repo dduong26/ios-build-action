@@ -5,6 +5,9 @@ branding:
   color: "white"
 description: "Build iOS project (.xcodeproj, .xcworkspace), export .ipa, optional upload to BrowserStack App Live."
 inputs:
+  app-id:
+    description: "Apple app id"
+    required: false
   upload-to-testflight:
     description: "Upload to TestFlight."
     required: false
