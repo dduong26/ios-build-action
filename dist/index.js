@@ -3375,6 +3375,7 @@ async function run() {
     process.env.APPLE_KEY_ID = core.getInput("apple-key-id");
     process.env.APPLE_KEY_ISSUER_ID = core.getInput("apple-key-issuer-id");
     process.env.APPLE_KEY_CONTENT = core.getInput("apple-key-content");
+    process.env.INCLUDE_BITCODE = core.getInput("include-bitcode")
     await exec.exec(`bash ${__dirname}/../build.sh`);
   } catch (error) {
     core.setFailed(error.message);

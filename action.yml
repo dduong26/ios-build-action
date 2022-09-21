@@ -95,6 +95,10 @@ inputs:
     description: "Browserstack access key (required if browserstack-upload == true)"
     required: false
     default: ""
+  include-bitcode:
+    description: "Whether fastlane should include bitcode as part of the build"
+    required: false
+    default: true
 runs:
   using: "node16"
   main: "dist/index.js"

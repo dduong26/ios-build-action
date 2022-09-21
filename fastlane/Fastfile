@@ -54,7 +54,7 @@ platform :ios do
       export_method: ENV['EXPORT_METHOD'],
       export_team_id: ENV['TEAM_ID'],
       silent: true,
-      include_bitcode: true,
+      include_bitcode: ENV.fetch('INCLUDE_BITCODE') { true },
     )
 
     if ENV["BROWSERSTACK_UPLOAD"] == 'true'
