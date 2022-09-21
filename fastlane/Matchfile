@@ -1,6 +1,14 @@
-git_url(ENV["MATCH_GIT_URL"])
+if ENV.include?("MATCH_GIT_URL")
+  puts "Using git for match..."
+  git_url(ENV["MATCH_GIT_URL"])
+  storage_mode("git")
+end
 
-storage_mode("git")
+if ENV.include?("MATCH_S3_BUCKET")
+  puts "Using S3 bucket for match..."
+  s3_bucket(ENV["MATCH_S3_BUCKET"])
+  storage_mode("s3")
+end
 
 type(ENV["MATCH_BUILD_TYPE"]) # The default type, can be: appstore, adhoc, enterprise or development
 

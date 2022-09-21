@@ -67,14 +67,15 @@ inputs:
     description: "The password to decrypt certificates."
     required: true
     default: false
+  match-s3-bucket:
+    description: "The Amazon S3 bucket where match can find the certificates."
+    required: false
   match-git-url:
     description: "The git url where match can find the certificates."
-    required: true
-    default: false
+    required: false
   match-git-basic-authorization:
     description: "The basic authorization to access the repository."
-    required: true
-    default: false
+    required: false
   match-build-type:
     description: "The build type to use when building the app."
     required: true

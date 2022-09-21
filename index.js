@@ -27,12 +27,22 @@ async function run() {
     );
     process.env.BUILD_PODS = core.getInput("build-pods");
     process.env.PODS_PATH = core.getInput("pods-path");
+
     process.env.MATCH_PASSWORD = core.getInput("match-password");
-    process.env.MATCH_GIT_URL = core.getInput("match-git-url");
-    process.env.MATCH_GIT_BASIC_AUTHORIZATION = core.getInput(
-      "match-git-basic-authorization"
-    );
+    const matchS3Bucket = core.getInput("match-s3-bucket");
+    if (!!matchS3Bucket) {
+      process.env.MATCH_S3_BUCKET = matchS3Bucket;
+    }
+    const matchGitUrl = core.getInput("match-git-url");
+    if (!!matchGitUrl) {
+      process.env.MATCH_GIT_URL = matchGitUrl;
+    }
+    const matchGitAuth = core.getInput("match-git-basic-authorization");
+    if (!!matchGitAuth) {
+      process.env.MATCH_GIT_BASIC_AUTHORIZATION = matchGitAuth;
+    }
     process.env.MATCH_BUILD_TYPE = core.getInput("match-build-type");
+
     process.env.APPLE_KEY_ID = core.getInput("apple-key-id");
     process.env.APPLE_KEY_ISSUER_ID = core.getInput("apple-key-issuer-id");
     process.env.APPLE_KEY_CONTENT = core.getInput("apple-key-content");
