@@ -16,6 +16,7 @@ keychain_name('ios-build.keychain')
 keychain_password('12345678')
 
 team_id(ENV["TEAM_ID"])
+team_name(ENV["TEAM_NAME"])
 
 # For all available options run `fastlane match --help`
 # Remove the # in the beginning of the line to enable the other options
