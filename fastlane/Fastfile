@@ -38,10 +38,9 @@ platform :ios do
         api_key: api_key,
         team_name: ENV["TEAM_NAME"]
       ),
-      current_build_number = previous_build_number + 1
       increment_build_number(
         xcodeproj: ENV['PROJECT_PATH'],
-        build_number: current_build_number
+        build_number: latest_testflight_build_number + 1
       )
     end
 
